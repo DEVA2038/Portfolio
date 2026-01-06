@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deva K | Aspiring Software Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <div class="overlay" id="globalOverlay"></div>
+    
+    <div class="popup-modal" id="whatsappPopup">
+        <h3>Connect on WhatsApp</h3>
+        <p>Start a chat or view my profile picture.</p>
+        <div class="popup-buttons">
+            <a href="https://wa.me/919032797140?text=Hi%20Deva,%20I%20saw%20your%20portfolio" class="btn btn-primary" target="_blank">
+                <i class="fab fa-whatsapp"></i> Start Chat
+            </a>
+            <button class="btn btn-secondary" id="viewProfileBtn">
+                <i class="fas fa-user-circle"></i> View DP
+            </button>
+        </div>
+        <button class="btn btn-secondary" style="margin-top: 1rem; width: 100%; border: none;" onclick="closeAllModals()">Close</button>
+    </div>
+    
+    <div class="popup-modal" id="resumePopup">
+        <h3>Resume Options</h3>
+        <p>View online or download PDF.</p>
+        <div class="popup-buttons">
+            <a href="https://drive.google.com/file/d/1pVElo09vvRUCHil0EW0UbJ2OStKrvgSd/view?usp=drive_link" class="btn btn-primary">
+                <i class="fas fa-eye"></i> View
+            </a>
+            <a href="https://drive.google.com/file/d/1pVElo09vvRUCHil0EW0UbJ2OStKrvgSd/view?usp=drive_link" class="btn btn-secondary">
+                <i class="fas fa-download"></i> Download
+            </a>
+        </div>
+        <button class="btn btn-secondary" style="margin-top: 1rem; width: 100%; border: none;" onclick="closeAllModals()">Close</button>
+    </div>
+    
+    <div class="popup-modal" id="profilePhotoModal">
+        <h3>Deva K</h3>
+        <div class="modal-photo-container">
+            <img src="" alt="Deva K Profile">
+        </div>
+        <p>Aspiring Software Developer</p>
+        <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;" onclick="closeAllModals()">Close</button>
+    </div>
+    
+    <div class="popup-modal" id="experienceModal">
+        <h3 id="experienceModalTitle"></h3>
+        <p id="experienceModalDesc"></p>
+        <div class="experience-links" id="experienceModalLinks">
+            <!-- Links will be populated here -->
+        </div>
+        <button class="btn btn-secondary" style="margin-top: 1rem; width: 100%; border: none;" onclick="closeAllModals()">Close</button>
+    </div>
+    
+    <div id="toast">
+        Email Copied!
+    </div>
+    
+    <header>
+        <div class="logo-container" id="logoClick">
+            <div class="logo-photo">
+                <img src="" alt="Deva K">
+            </div>
+            <div class="logo-text">Deva K</div>
+        </div>
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#profiles">Profiles</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="mobile-menu-btn" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+    
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">Deva K</span> 👋</h1>
+            <div class="typing-container">
+                <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+            </div>
+            <div class="hero-bio">
+                <p>I build practical, scalable software solutions with a strong focus on clean, maintainable code. I enjoy solving complex problems and turning ideas into reliable, real-world applications.</p>
+                <p>My interests span full-stack development and machine learning, where I design end-to-end systems that combine solid backend logic with intuitive user interfaces. I'm driven by curiosity, continuous learning, and the desire to create software that actually makes an impact.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                <button class="btn resume-btn" id="resumeBtn">
+                    <i class="fas fa-file-alt"></i> Resume
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2 class="section-title">About <span class="highlight">Me</span></h2>
+        <div class="about-container">
+            <div class="about-content">
+                <h3>Hi, I'm Deva K</h3>
+                <p>I'm a pre-final year Computer Science and Engineering student at RMD Engineering College (Autonomous). I'm an aspiring Software Developer with a strong interest in building practical, real-world software solutions through clean and efficient code.</p>
+                <p>I work across full-stack development and machine learning, focusing on developing complete systems rather than isolated features. I've built end-to-end applications that involve backend logic, model training workflows, and interactive user interfaces, giving me hands-on experience with how real software products are designed and delivered.</p>
+                <p>I enjoy solving complex problems by breaking them down into manageable components and designing solutions that are scalable, maintainable, and reliable. Alongside academics, I continuously strengthen my skills through internships, personal projects, and regular practice of data structures and algorithms.</p>
+                <p>When I'm not coding, you'll find me solving algorithmic challenges, exploring new technologies, or learning about the latest developments in software engineering. I'm always looking for opportunities to apply my skills to meaningful projects and contribute to building innovative solutions.</p>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">600+</div>
+                    <div class="stat-label">Problems Solved</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Projects Built</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Internships</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Tech Skills</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience">
+        <h2 class="section-title">My <span class="highlight">Experience</span></h2>
+        <div class="timeline">
+            <div class="timeline-item" data-exp-id="aiml">
+                <div class="timeline-date">May 2025</div>
+                <div class="timeline-content">
+                    <h3>AIML Intern - AICTE Platform</h3>
+                    <p class="timeline-duration">1 Month Internship</p>
+                    <p class="timeline-desc">Developed an Employee Salary Prediction system using Machine Learning algorithms. Built and trained regression models to predict salaries based on multiple parameters including experience, education, and job role.</p>
+                    <div class="timeline-tech">
+                        <span>Python</span>
+                        <span>Scikit-learn</span>
+                        <span>Pandas</span>
+                        <span>Flask</span>
+                    </div>
+                    <button class="btn btn-primary timeline-btn">View Details</button>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-exp-id="webdev">
+                <div class="timeline-date">June 2025</div>
+                <div class="timeline-content">
+                    <h3>Web Developer - InternPro</h3>
+                    <p class="timeline-duration">1 Month Internship</p>
+                    <p class="timeline-desc">Created a Dynamic Weather Application with real-time data fetching, location-based weather updates, and interactive visualization of weather forecasts and historical data.</p>
+                    <div class="timeline-tech">
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>REST API</span>
+                        <span>Bootstrap</span>
+                    </div>
+                    <button class="btn btn-primary timeline-btn">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
+        <div class="skills-section">
+            <div class="skills-category">
+                <h3 class="category-title"><i class="fas fa-code"></i> Programming Languages</h3>
+                <div class="skills-grid">
+                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-java"></i></div> Java</div>
+                    <div class="skill-item"><div class="skill-icon">C++</div> C++</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-python"></i></div> Python</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-js"></i></div> JavaScript</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-html5"></i></div> HTML5</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-css3-alt"></i></div> CSS3</div>
+                </div>
+            </div>
+            
+            <div class="skills-category">
+                <h3 class="category-title"><i class="fas fa-tools"></i> Tools & IDEs</h3>
+                <div class="skills-grid">
+                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-git-alt"></i></div> Git/GitHub</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-google"></i></div> Google Colab</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fas fa-laptop-code"></i></div> VS Code</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fas fa-code"></i></div> Eclipse</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fas fa-code"></i></div> IntelliJ IDEA</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fas fa-terminal"></i></div> Command Line</div>
+                </div>
+            </div>
+            
+            <div class="skills-category">
+                <h3 class="category-title"><i class="fas fa-cogs"></i> Frameworks & Libraries</h3>
+                <div class="skills-grid">
+                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-react"></i></div> React</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fas fa-exchange-alt"></i></div> REST APIs</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-python"></i></div> NumPy</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-python"></i></div> Pandas</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-python"></i></div> Matplotlib</div>
+                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-python"></i></div> Scikit-learn</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <h2 class="section-title">My <span class="highlight">Projects</span></h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Employee Salary Prediction">
+                    <div class="project-links">
+                        <a href="https://github.com/devak/employee-salary-prediction" class="project-link" aria-label="GitHub Repo" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" class="project-link" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Employee Salary Prediction</h3>
+                    <p>A machine learning web application that predicts employee salaries based on experience, education, location, and role. Built with Flask backend and interactive frontend for model training and predictions.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Flask</span>
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">HTML/CSS</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Machine Learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- PROFILES SECTION -->
+    <section id="profiles">
+        <h2 class="section-title">My <span class="highlight">Profiles</span></h2>
+        <div class="profiles-container">
+            <div class="profile-grid">
+                <!-- GitHub -->
+                <div class="profile-card compact" id="githubProfile">
+                    <div class="profile-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="profile-content">
+                        <h3>GitHub</h3>
+                        <div class="profile-id">@devak</div>
+                        <a href="https://github.com/DEVA2038" class="profile-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- LinkedIn -->
+                <div class="profile-card compact" id="linkedinProfile">
+                    <div class="profile-icon" style="background: linear-gradient(135deg, #0077b5, #00a0dc);">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div class="profile-content">
+                        <h3>LinkedIn</h3>
+                        <div class="profile-id">in/@devak</div>
+                        <a href="https://www.linkedin.com/in/deva-k-s/" class="profile-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- LeetCode -->
+                <div class="profile-card compact" id="leetcodeProfile">
+                    <div class="profile-icon" style="background: linear-gradient(135deg, #f89f1b, #ffa726);">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="profile-content">
+                        <h3>LeetCode</h3>
+                        <div class="profile-id">@devak</div>
+                        <a href="https://leetcode.com/u/DEVA_k/" class="profile-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- HackerRank -->
+                <div class="profile-card compact" id="hackerrankProfile">
+                    <div class="profile-icon" style="background: linear-gradient(135deg, #1ba94c, #2ec866);">
+                        <i class="fab fa-hackerrank"></i>
+                    </div>
+                    <div class="profile-content">
+                        <h3>HackerRank</h3>
+                        <div class="profile-id">@devak</div>
+                        <a href="https://www.hackerrank.com/profile/k_deva8428893" class="profile-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Skillrack -->
+                <div class="profile-card compact" id="skillrackProfile">
+                    <div class="profile-icon" style="background: linear-gradient(135deg, #4a00e0, #8e2de2);">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="profile-content">
+                        <h3>Skillrack</h3>
+                        <div class="profile-id">@devak</div>
+                        <a href="https://www.skillrack.com/faces/resume.xhtml?id=437875&key=d40884e645211a685de566a7c5cea249ae8b2129" class="profile-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Instagram -->
+                <div class="profile-card compact" id="instagramProfile">
+                    <div class="profile-icon" style="background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="profile-content">
+                        <h3>Instagram</h3>
+                        <div class="profile-id">@devak</div>
+                        <a href="https://www.instagram.com/_ks_deva_/" class="profile-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+
+    <section id="contact">
+        <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+        <div class="contact-container">
+            <div class="contact-grid">
+                <div class="contact-item" id="emailContact">
+                    <div class="contact-icon" style="font-size: 2rem; margin-bottom: 1rem; color: var(--secondary);">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4>Email</h4>
+                    <p id="emailText">k.deva8428893@gmail.com</p>
+                    <small style="opacity: 0.6; font-size: 0.8rem;">Click to copy</small>
+                    <a href="mailto:k.deva8428893@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Deva,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect..." 
+                       class="btn btn-secondary" style="margin-top: 10px; padding: 8px 15px; font-size: 0.9rem;">
+                        <i class="fas fa-paper-plane"></i> Send Mail
+                    </a>
+                </div>
+                
+                <div class="contact-item" id="whatsappCta">
+                    <div class="contact-icon" style="font-size: 2rem; margin-bottom: 1rem; color: #25D366;">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h4>WhatsApp</h4>
+                    <p>+91 90327 97140</p>
+                    <small style="background: rgba(37, 211, 102, 0.2); padding: 2px 8px; border-radius: 4px; color: #25D366; margin-bottom: 10px;">Click to chat</small>
+                    <button class="btn btn-secondary" style="margin-top: 5px; padding: 8px 15px; font-size: 0.9rem; background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.3);">
+                        <i class="fab fa-whatsapp"></i> Start Chat
+                    </button>
+                </div>
+                
+                <div class="contact-item" id="locationContact">
+                    <div class="contact-icon" style="font-size: 2rem; margin-bottom: 1rem; color: var(--secondary);">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h4>Location</h4>
+                    <p>Chennai, India</p>
+                    <small style="opacity: 0.6; font-size: 0.8rem;">Open to remote work</small>
+                    <button class="btn btn-secondary" style="margin-top: 10px; padding: 8px 15px; font-size: 0.9rem;" id="locationWhatsapp">
+                        <i class="fab fa-whatsapp"></i> Chat via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>© 2024 Deva K. Aspiring Software Developer.</p>
+        <p class="footer-links">
+            <a href="mailto:devak.professional@example.com"><i class="fas fa-envelope"></i> Email</a> | 
+            <a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a> | 
+            <a href="#projects"><i class="fas fa-code"></i> Projects</a> |
+            <a href="#profiles"><i class="fas fa-user-circle"></i> Profiles</a>
+        </p>
+    </footer>
+    
+    <a href="#home" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
