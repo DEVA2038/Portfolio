@@ -41,7 +41,7 @@ You can view the live preview of my portfolio here:
 ## 📬 Contact Me
 
 - GitHub: https://github.com/DEVA2038
-- Email: k.deva8428893@gmail.com *(update this)*
+- Email: k.deva8428893@gmail.com 
 
 ---
 
