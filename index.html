@@ -1,396 +1,541 @@
+<!-- Updated index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deva K | Aspiring Software Developer</title>
+    <title>Deva | Developer Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="particles-js"></div>
-    
-    <div class="overlay" id="globalOverlay"></div>
-    
-    <div class="popup-modal" id="whatsappPopup">
-        <h3>Connect on WhatsApp</h3>
-        <p>Start a chat or view my profile picture.</p>
-        <div class="popup-buttons">
-            <a href="https://wa.me/919032797140?text=Hi%20Deva,%20I%20saw%20your%20portfolio" class="btn btn-primary" target="_blank">
-                <i class="fab fa-whatsapp"></i> Start Chat
-            </a>
-            <button class="btn btn-secondary" id="viewProfileBtn">
-                <i class="fas fa-user-circle"></i> View DP
+    <!-- Cursor and Floating Elements -->
+    <div class="cursor-dot"></div>
+    <div class="floating-orbs"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">Deva</a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
             </button>
         </div>
-        <button class="btn btn-secondary" style="margin-top: 1rem; width: 100%; border: none;" onclick="closeAllModals()">Close</button>
-    </div>
-    
-    <div class="popup-modal" id="resumePopup">
-        <h3>Resume Options</h3>
-        <p>View online or download PDF.</p>
-        <div class="popup-buttons">
-            <a href="https://drive.google.com/file/d/1pVElo09vvRUCHil0EW0UbJ2OStKrvgSd/view?usp=drive_link" class="btn btn-primary">
-                <i class="fas fa-eye"></i> View
-            </a>
-            <a href="https://drive.google.com/file/d/1pVElo09vvRUCHil0EW0UbJ2OStKrvgSd/view?usp=drive_link" class="btn btn-secondary">
-                <i class="fas fa-download"></i> Download
-            </a>
-        </div>
-        <button class="btn btn-secondary" style="margin-top: 1rem; width: 100%; border: none;" onclick="closeAllModals()">Close</button>
-    </div>
-    
-    <div class="popup-modal" id="profilePhotoModal">
-        <h3>Deva K</h3>
-        <div class="modal-photo-container">
-            <img src="" alt="Deva K Profile">
-        </div>
-        <p>Aspiring Software Developer</p>
-        <button class="btn btn-primary" style="margin-top: 1rem; width: 100%;" onclick="closeAllModals()">Close</button>
-    </div>
-    
-    <div class="popup-modal" id="experienceModal">
-        <h3 id="experienceModalTitle"></h3>
-        <p id="experienceModalDesc"></p>
-        <div class="experience-links" id="experienceModalLinks">
-            <!-- Links will be populated here -->
-        </div>
-        <button class="btn btn-secondary" style="margin-top: 1rem; width: 100%; border: none;" onclick="closeAllModals()">Close</button>
-    </div>
-    
-    <div id="toast">
-        Email Copied!
-    </div>
-    
-    <header>
-        <div class="logo-container" id="logoClick">
-            <div class="logo-photo">
-                <img src="" alt="Deva K">
-            </div>
-            <div class="logo-text">Deva K</div>
-        </div>
-        <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#profiles">Profiles</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <button class="mobile-menu-btn" aria-label="Toggle Menu">
-            <i class="fas fa-bars"></i>
-        </button>
-    </header>
-    
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Deva K</span> 👋</h1>
-            <div class="typing-container">
-                <span class="typed-text"></span><span class="cursor">&nbsp;</span>
-            </div>
-            <div class="hero-bio">
-                <p>I build practical, scalable software solutions with a strong focus on clean, maintainable code. I enjoy solving complex problems and turning ideas into reliable, real-world applications.</p>
-                <p>My interests span full-stack development and machine learning, where I design end-to-end systems that combine solid backend logic with intuitive user interfaces. I'm driven by curiosity, continuous learning, and the desire to create software that actually makes an impact.</p>
-            </div>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                <button class="btn resume-btn" id="resumeBtn">
-                    <i class="fas fa-file-alt"></i> Resume
-                </button>
-            </div>
-        </div>
-    </section>
-    
-    <section id="about">
-        <h2 class="section-title">About <span class="highlight">Me</span></h2>
-        <div class="about-container">
-            <div class="about-content">
-                <h3>Hi, I'm Deva K</h3>
-                <p>I'm a pre-final year Computer Science and Engineering student at RMD Engineering College (Autonomous). I'm an aspiring Software Developer with a strong interest in building practical, real-world software solutions through clean and efficient code.</p>
-                <p>I work across full-stack development and machine learning, focusing on developing complete systems rather than isolated features. I've built end-to-end applications that involve backend logic, model training workflows, and interactive user interfaces, giving me hands-on experience with how real software products are designed and delivered.</p>
-                <p>I enjoy solving complex problems by breaking them down into manageable components and designing solutions that are scalable, maintainable, and reliable. Alongside academics, I continuously strengthen my skills through internships, personal projects, and regular practice of data structures and algorithms.</p>
-                <p>When I'm not coding, you'll find me solving algorithmic challenges, exploring new technologies, or learning about the latest developments in software engineering. I'm always looking for opportunities to apply my skills to meaningful projects and contribute to building innovative solutions.</p>
-            </div>
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-number">600+</div>
-                    <div class="stat-label">Problems Solved</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">8+</div>
-                    <div class="stat-label">Projects Built</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">2</div>
-                    <div class="stat-label">Internships</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Tech Skills</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="experience">
-        <h2 class="section-title">My <span class="highlight">Experience</span></h2>
-        <div class="timeline">
-            <div class="timeline-item" data-exp-id="aiml">
-                <div class="timeline-date">May 2025</div>
-                <div class="timeline-content">
-                    <h3>AIML Intern - AICTE Platform</h3>
-                    <p class="timeline-duration">1 Month Internship</p>
-                    <p class="timeline-desc">Developed an Employee Salary Prediction system using Machine Learning algorithms. Built and trained regression models to predict salaries based on multiple parameters including experience, education, and job role.</p>
-                    <div class="timeline-tech">
-                        <span>Python</span>
-                        <span>Scikit-learn</span>
-                        <span>Pandas</span>
-                        <span>Flask</span>
-                    </div>
-                    <button class="btn btn-primary timeline-btn">View Details</button>
-                </div>
-            </div>
-            
-            <div class="timeline-item" data-exp-id="webdev">
-                <div class="timeline-date">June 2025</div>
-                <div class="timeline-content">
-                    <h3>Web Developer - InternPro</h3>
-                    <p class="timeline-duration">1 Month Internship</p>
-                    <p class="timeline-desc">Created a Dynamic Weather Application with real-time data fetching, location-based weather updates, and interactive visualization of weather forecasts and historical data.</p>
-                    <div class="timeline-tech">
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
-                        <span>REST API</span>
-                        <span>Bootstrap</span>
-                    </div>
-                    <button class="btn btn-primary timeline-btn">View Details</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="skills">
-        <h2 class="section-title">Technical <span class="highlight">Skills</span></h2>
-        <div class="skills-section">
-            <div class="skills-category">
-                <h3 class="category-title"><i class="fas fa-code"></i> Programming Languages</h3>
-                <div class="skills-grid">
-                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-java"></i></div> Java</div>
-                    <div class="skill-item"><div class="skill-icon">C++</div> C++</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-python"></i></div> Python</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-js"></i></div> JavaScript</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-html5"></i></div> HTML5</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-css3-alt"></i></div> CSS3</div>
-                </div>
-            </div>
-            
-            <div class="skills-category">
-                <h3 class="category-title"><i class="fas fa-tools"></i> Tools & IDEs</h3>
-                <div class="skills-grid">
-                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-git-alt"></i></div> Git/GitHub</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-google"></i></div> Google Colab</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fas fa-laptop-code"></i></div> VS Code</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fas fa-code"></i></div> Eclipse</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fas fa-code"></i></div> IntelliJ IDEA</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fas fa-terminal"></i></div> Command Line</div>
-                </div>
-            </div>
-            
-            <div class="skills-category">
-                <h3 class="category-title"><i class="fas fa-cogs"></i> Frameworks & Libraries</h3>
-                <div class="skills-grid">
-                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-react"></i></div> React</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fas fa-exchange-alt"></i></div> REST APIs</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-python"></i></div> NumPy</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-python"></i></div> Pandas</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-python"></i></div> Matplotlib</div>
-                    <div class="skill-item"><div class="skill-icon"><i class="fab fa-python"></i></div> Scikit-learn</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="projects">
-        <h2 class="section-title">My <span class="highlight">Projects</span></h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Employee Salary Prediction">
-                    <div class="project-links">
-                        <a href="https://github.com/devak/employee-salary-prediction" class="project-link" aria-label="GitHub Repo" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="#" class="project-link" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Employee Salary Prediction</h3>
-                    <p>A machine learning web application that predicts employee salaries based on experience, education, location, and role. Built with Flask backend and interactive frontend for model training and predictions.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Flask</span>
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">HTML/CSS</span>
-                        <span class="project-tag">JavaScript</span>
-                        <span class="project-tag">Machine Learning</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- PROFILES SECTION -->
-    <section id="profiles">
-        <h2 class="section-title">My <span class="highlight">Profiles</span></h2>
-        <div class="profiles-container">
-            <div class="profile-grid">
-                <!-- GitHub -->
-                <div class="profile-card compact" id="githubProfile">
-                    <div class="profile-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <div class="profile-content">
-                        <h3>GitHub</h3>
-                        <div class="profile-id">@devak</div>
-                        <a href="https://github.com/DEVA2038" class="profile-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- LinkedIn -->
-                <div class="profile-card compact" id="linkedinProfile">
-                    <div class="profile-icon" style="background: linear-gradient(135deg, #0077b5, #00a0dc);">
-                        <i class="fab fa-linkedin-in"></i>
-                    </div>
-                    <div class="profile-content">
-                        <h3>LinkedIn</h3>
-                        <div class="profile-id">in/@devak</div>
-                        <a href="https://www.linkedin.com/in/deva-k-s/" class="profile-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- LeetCode -->
-                <div class="profile-card compact" id="leetcodeProfile">
-                    <div class="profile-icon" style="background: linear-gradient(135deg, #f89f1b, #ffa726);">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="profile-content">
-                        <h3>LeetCode</h3>
-                        <div class="profile-id">@devak</div>
-                        <a href="https://leetcode.com/u/DEVA_k/" class="profile-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- HackerRank -->
-                <div class="profile-card compact" id="hackerrankProfile">
-                    <div class="profile-icon" style="background: linear-gradient(135deg, #1ba94c, #2ec866);">
-                        <i class="fab fa-hackerrank"></i>
-                    </div>
-                    <div class="profile-content">
-                        <h3>HackerRank</h3>
-                        <div class="profile-id">@devak</div>
-                        <a href="https://www.hackerrank.com/profile/k_deva8428893" class="profile-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Skillrack -->
-                <div class="profile-card compact" id="skillrackProfile">
-                    <div class="profile-icon" style="background: linear-gradient(135deg, #4a00e0, #8e2de2);">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="profile-content">
-                        <h3>Skillrack</h3>
-                        <div class="profile-id">@devak</div>
-                        <a href="https://www.skillrack.com/faces/resume.xhtml?id=437875&key=d40884e645211a685de566a7c5cea249ae8b2129" class="profile-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Instagram -->
-                <div class="profile-card compact" id="instagramProfile">
-                    <div class="profile-icon" style="background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);">
-                        <i class="fab fa-instagram"></i>
-                    </div>
-                    <div class="profile-content">
-                        <h3>Instagram</h3>
-                        <div class="profile-id">@devak</div>
-                        <a href="https://www.instagram.com/_ks_deva_/" class="profile-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-        
+    </nav>
 
-    <section id="contact">
-        <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
-        <div class="contact-container">
-            <div class="contact-grid">
-                <div class="contact-item" id="emailContact">
-                    <div class="contact-icon" style="font-size: 2rem; margin-bottom: 1rem; color: var(--secondary);">
-                        <i class="fas fa-envelope"></i>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge animate-on-scroll">Open to opportunities</span>
+                <h1 class="hero-title animate-on-scroll">Hi, I'm <span class="gradient-text animate-gradient">Deva</span></h1>
+                <p class="hero-subtitle animate-on-scroll">Computer Science Engineering Student | Web Developer | AI/ML Enthusiast</p>
+                <p class="hero-description animate-on-scroll">Building scalable web systems and intelligent solutions using modern technologies.</p>
+                <div class="hero-buttons animate-on-scroll">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="https://drive.google.com/file/d/1pVElo09vvRUCHil0EW0UbJ2OStKrvgSd/view?usp=drive_link" class="btn btn-secondary" id="resume-btn">Download Resume</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Passionate Developer, <span class="gradient-text">Curious Learner</span></h2>
+            <div class="about-grid">
+                <div class="about-content animate-on-scroll">
+                    <p class="about-text">I'm a Computer Science Engineering undergraduate with a strong passion for creating impactful digital solutions. Currently pursuing my degree (2023–2027), I maintain a solid academic foundation with a CGPA of 8.09, backed by exceptional performance in my 12th (98.2%) and 10th (98%) grades.</p>
+                    <p class="about-text">My journey in technology spans full-stack web development and machine learning, where I focus on building real-world, scalable applications that solve meaningful problems. I thrive on transforming complex challenges into elegant solutions, combining technical expertise with strong problem-solving abilities, effective communication, and adaptability.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-value">8.09</div>
+                        <div class="stat-label">CGPA</div>
                     </div>
-                    <h4>Email</h4>
-                    <p id="emailText">k.deva8428893@gmail.com</p>
-                    <small style="opacity: 0.6; font-size: 0.8rem;">Click to copy</small>
-                    <a href="mailto:k.deva8428893@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Deva,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect..." 
-                       class="btn btn-secondary" style="margin-top: 10px; padding: 8px 15px; font-size: 0.9rem;">
-                        <i class="fas fa-paper-plane"></i> Send Mail
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-value">98.2%</div>
+                        <div class="stat-label">12th Grade</div>
+                    </div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">10th Grade</div>
+                    </div>
+                    <div class="stat-card animate-on-scroll">
+                        <div class="stat-value">2023–27</div>
+                        <div class="stat-label">Batch</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Skills & <span class="gradient-text">Technologies</span></h2>
+            <div class="skills-grid">
+                <div class="skill-category animate-on-scroll">
+                    <h3 class="skill-category-title">Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-category animate-on-scroll">
+                    <h3 class="skill-category-title">Frameworks & Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category animate-on-scroll">
+                    <h3 class="skill-category-title">Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Eclipse</span>
+                        <span class="skill-tag">IntelliJ IDEA</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Google Colab</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+                <div class="skill-category animate-on-scroll">
+                    <h3 class="skill-category-title">Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Problem-Solving</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Adaptability</span>
+                        <span class="skill-tag">Team Collaboration</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Professional <span class="gradient-text">Journey</span></h2>
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-date">Jun – Jul 2025 | Remote</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">InternPro – Web Development Intern</h3>
+                        <p class="timeline-description">Built a React-based restaurant booking system with real-time seat availability and responsive UI. Implemented modern frontend practices and optimized user experience for seamless reservations.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">REST APIs</span>
+                            <span class="tag">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-date">Jul – Aug 2025 | Remote</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">AICTE IBM SkillsBuild – AI/ML Intern</h3>
+                        <p class="timeline-description">Developed an employee salary prediction system using machine learning regression models. Gained hands-on experience in data preprocessing, model training, and evaluation.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Regression</span>
+                            <span class="tag">Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (UPDATED) -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Recent <span class="gradient-text">Projects</span></h2>
+            <div class="projects-grid">
+                <!-- Project 1 - Compact Card -->
+                <div class="project-card-compact animate-on-scroll" data-modal="project-1">
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">Employee Salary Prediction System</h3>
+                        <div class="project-card-badge">ML Project</div>
+                    </div>
+                    <p class="project-card-summary">ML-based salary prediction platform with dataset uploads, admin approval workflow, and automated model selection.</p>
+                    <div class="project-card-tech">
+                        <span class="tech-chip">Python</span>
+                        <span class="tech-chip">Machine Learning</span>
+                        <span class="tech-chip">Flask</span>
+                    </div>
+                    <button class="btn btn-outline view-details-btn">View Details</button>
+                </div>
+
+                <!-- Project 2 - Compact Card -->
+                <div class="project-card-compact animate-on-scroll" data-modal="project-2">
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">DevPulse – Real-Time Portfolio Sync Engine</h3>
+                        <div class="project-card-badge">Full-Stack</div>
+                    </div>
+                    <p class="project-card-summary">Full-stack event-driven system using GitHub webhooks to sync portfolios in real time with editable dashboards.</p>
+                    <div class="project-card-tech">
+                        <span class="tech-chip">React</span>
+                        <span class="tech-chip">Node.js</span>
+                        <span class="tech-chip">GitHub Webhooks</span>
+                    </div>
+                    <button class="btn btn-outline view-details-btn">View Details</button>
+                </div>
+
+                <!-- Project 3 - Compact Card -->
+                <div class="project-card-compact animate-on-scroll" data-modal="project-3">
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">ContentScheduler</h3>
+                        <div class="project-card-badge">Social Media</div>
+                    </div>
+                    <p class="project-card-summary">A centralized platform to schedule and publish posts across multiple social media accounts.</p>
+                    <div class="project-card-tech">
+                        <span class="tech-chip">HTML</span>
+                        <span class="tech-chip">CSS</span>
+                        <span class="tech-chip">JavaScript</span>
+                        <span class="tech-chip">Python</span>
+                    </div>
+                    <button class="btn btn-outline view-details-btn">View Details</button>
+                </div>
+
+                <!-- Project 4 - Compact Card -->
+                <div class="project-card-compact animate-on-scroll" data-modal="project-4">
+                    <div class="project-card-header">
+                        <h3 class="project-card-title">Dynamic Weather App</h3>
+                        <div class="project-card-badge">Web App</div>
+                    </div>
+                    <p class="project-card-summary">A real-time weather application providing live updates and accurate forecasts.</p>
+                    <div class="project-card-tech">
+                        <span class="tech-chip">HTML</span>
+                        <span class="tech-chip">CSS</span>
+                        <span class="tech-chip">JavaScript</span>
+                        <span class="tech-chip">APIs</span>
+                    </div>
+                    <button class="btn btn-outline view-details-btn">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <div class="modal-overlay" id="modal-overlay">
+        <!-- Project 1 Modal -->
+        <div class="modal" id="project-1">
+            <button class="modal-close" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3 class="modal-title">Employee Salary Prediction System</h3>
+                <div class="modal-badge">ML Project</div>
+            </div>
+            <div class="modal-content">
+                <p class="modal-description">ML-based salary prediction platform with dataset uploads, admin approval workflow, automated best-model selection, and secure authentication.</p>
+                
+                <div class="modal-section">
+                    <h4>Features</h4>
+                    <ul class="modal-features">
+                        <li>Dataset Upload & Management</li>
+                        <li>Auto Model Selection</li>
+                        <li>Admin Approval System</li>
+                        <li>Secure Authentication</li>
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h4>Tech Stack</h4>
+                    <div class="modal-tech">
+                        <span class="modal-tech-tag">Python</span>
+                        <span class="modal-tech-tag">Machine Learning</span>
+                        <span class="modal-tech-tag">Scikit-learn</span>
+                        <span class="modal-tech-tag">Flask</span>
+                        <span class="modal-tech-tag">Authentication</span>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <a href="https://github.com/DEVA2038/Employee-Salary-Prediction" class="btn btn-primary">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <a href="https://employee-salary-prediction-pr99.onrender.com/" class="btn btn-secondary">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
                     </a>
                 </div>
+            </div>
+        </div>
+
+        <!-- Project 2 Modal -->
+        <div class="modal" id="project-2">
+            <button class="modal-close" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3 class="modal-title">DevPulse – Real-Time Portfolio Sync Engine</h3>
+                <div class="modal-badge">Full-Stack</div>
+            </div>
+            <div class="modal-content">
+                <p class="modal-description">Full-stack event-driven system using GitHub webhooks to sync portfolios in real time. Features editable dashboards and embeddable JavaScript widgets.</p>
                 
-                <div class="contact-item" id="whatsappCta">
-                    <div class="contact-icon" style="font-size: 2rem; margin-bottom: 1rem; color: #25D366;">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <h4>WhatsApp</h4>
-                    <p>+91 90327 97140</p>
-                    <small style="background: rgba(37, 211, 102, 0.2); padding: 2px 8px; border-radius: 4px; color: #25D366; margin-bottom: 10px;">Click to chat</small>
-                    <button class="btn btn-secondary" style="margin-top: 5px; padding: 8px 15px; font-size: 0.9rem; background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.3);">
-                        <i class="fab fa-whatsapp"></i> Start Chat
-                    </button>
+                <div class="modal-section">
+                    <h4>Features</h4>
+                    <ul class="modal-features">
+                        <li>GitHub Webhook Integration</li>
+                        <li>Editable Dashboards</li>
+                        <li>Real-time Sync</li>
+                        <li>Embeddable Widgets</li>
+                    </ul>
                 </div>
                 
-                <div class="contact-item" id="locationContact">
-                    <div class="contact-icon" style="font-size: 2rem; margin-bottom: 1rem; color: var(--secondary);">
-                        <i class="fas fa-map-marker-alt"></i>
+                <div class="modal-section">
+                    <h4>Tech Stack</h4>
+                    <div class="modal-tech">
+                        <span class="modal-tech-tag">React</span>
+                        <span class="modal-tech-tag">Node.js</span>
+                        <span class="modal-tech-tag">GitHub Webhooks</span>
+                        <span class="modal-tech-tag">Real-time APIs</span>
+                        <span class="modal-tech-tag">JavaScript Widgets</span>
                     </div>
-                    <h4>Location</h4>
-                    <p>Chennai, India</p>
-                    <small style="opacity: 0.6; font-size: 0.8rem;">Open to remote work</small>
-                    <button class="btn btn-secondary" style="margin-top: 10px; padding: 8px 15px; font-size: 0.9rem;" id="locationWhatsapp">
-                        <i class="fab fa-whatsapp"></i> Chat via WhatsApp
-                    </button>
+                </div>
+                
+                <div class="modal-actions">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 Modal -->
+        <div class="modal" id="project-3">
+            <button class="modal-close" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3 class="modal-title">ContentScheduler</h3>
+                <div class="modal-badge">Social Media</div>
+            </div>
+            <div class="modal-content">
+                <p class="modal-description">ContentScheduler is a unified social media management platform that allows users to plan, schedule, and publish posts across multiple social media platforms from a single dashboard. It helps creators and businesses maintain consistency, save time, and manage content efficiently.</p>
+                
+                <div class="modal-section">
+                    <h4>Features</h4>
+                    <ul class="modal-features">
+                        <li>Schedule posts for multiple social media platforms</li>
+                        <li>Centralized content dashboard</li>
+                        <li>Platform-specific scheduling support</li>
+                        <li>Post preview before publishing</li>
+                        <li>Secure user authentication</li>
+                        <li>Time-zone–based scheduling</li>
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h4>Tech Stack</h4>
+                    <div class="modal-tech">
+                        <span class="modal-tech-tag">HTML</span>
+                        <span class="modal-tech-tag">CSS</span>
+                        <span class="modal-tech-tag">JavaScript</span>
+                        <span class="modal-tech-tag">Python</span>
+                        <span class="modal-tech-tag">APIs</span>
+                        <span class="modal-tech-tag">Automation</span>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 4 Modal -->
+        <div class="modal" id="project-4">
+            <button class="modal-close" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3 class="modal-title">Dynamic Weather App</h3>
+                <div class="modal-badge">Web App</div>
+            </div>
+            <div class="modal-content">
+                <p class="modal-description">Dynamic Weather App delivers real-time weather information based on the user's location. It provides live weather updates, short-term hourly forecasts, and long-term weekly predictions using reliable weather and news APIs.</p>
+                
+                <div class="modal-section">
+                    <h4>Features</h4>
+                    <ul class="modal-features">
+                        <li>Live weather data based on location</li>
+                        <li>Current temperature, humidity, and conditions</li>
+                        <li>10-hour weather forecast</li>
+                        <li>7-day weather forecast</li>
+                        <li>Weather alerts and updates</li>
+                        <li>Location-based search</li>
+                        <li>API-driven real-time updates</li>
+                    </ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h4>Tech Stack</h4>
+                    <div class="modal-tech">
+                        <span class="modal-tech-tag">HTML</span>
+                        <span class="modal-tech-tag">CSS</span>
+                        <span class="modal-tech-tag">JavaScript</span>
+                        <span class="modal-tech-tag">Weather API</span>
+                        <span class="modal-tech-tag">News API</span>
+                        <span class="modal-tech-tag">API Keys</span>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Let's <span class="gradient-text">Connect</span></h2>
+            <p class="contact-subtitle animate-on-scroll">Let's connect and build something impactful together.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-form-container animate-on-scroll">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group animate-on-scroll">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group animate-on-scroll">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group animate-on-scroll">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group animate-on-scroll">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info animate-on-scroll">
+                    <div class="contact-details">
+                        <div class="contact-item animate-on-scroll">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:k.deva8428893@gmail.com">k.deva8428893@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item animate-on-scroll">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+919032797140">+91 9032797140</a>
+                            </div>
+                        </div>
+                        <div class="contact-item animate-on-scroll">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div>
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/DEVA2038" target="_blank">@deva-github</a>
+                            </div>
+                        </div>
+                        <div class="contact-item animate-on-scroll">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/deva-k-s/" target="_blank">@deva-linkedin</a>
+                            </div>
+                        </div>
+                        <div class="contact-item animate-on-scroll">
+                            <div class="contact-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div>
+                                <h4>LeetCode</h4>
+                                <a href="https://leetcode.com/u/DEVA_k/" target="_blank">@deva-leetcode</a>
+                            </div>
+                        </div>
+                        <div class="contact-item animate-on-scroll">
+                            <div class="contact-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div>
+                                <h4>HackerRank</h4>
+                                <a href="https://www.hackerrank.com/profile/k_deva8428893" target="_blank">@deva-hackerrank</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <footer>
-        <p>© 2024 Deva K. Aspiring Software Developer.</p>
-        <p class="footer-links">
-            <a href="mailto:devak.professional@example.com"><i class="fas fa-envelope"></i> Email</a> | 
-            <a href="#contact"><i class="fas fa-phone-alt"></i> Contact</a> | 
-            <a href="#projects"><i class="fas fa-code"></i> Projects</a> |
-            <a href="#profiles"><i class="fas fa-user-circle"></i> Profiles</a>
-        </p>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Deva</div>
+                <p class="footer-text">© 2025 Deva. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/DEVA2038" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/deva-k-s/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/u/DEVA_k/" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
-    
-    <a href="#home" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-    
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <script src="script.js"></script>
 </body>
 </html>
